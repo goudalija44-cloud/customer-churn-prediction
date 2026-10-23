@@ -1,0 +1,46 @@
+Feature,Importance
+categorical__Contract_Month-to-month,0.36350870048381534
+numeric__tenure,0.18497116132081534
+categorical__InternetService_Fiber optic,0.133317950074281
+categorical__OnlineSecurity_No,0.0842390994724256
+categorical__PaymentMethod_Electronic check,0.0504725146189893
+categorical__TechSupport_No,0.047780721409734106
+numeric__MonthlyCharges,0.04306479497220165
+numeric__TotalCharges,0.03201051552806847
+categorical__PaperlessBilling_No,0.00991181343107796
+categorical__MultipleLines_No,0.00970463033429865
+categorical__OnlineBackup_No,0.00881134695405576
+categorical__PaperlessBilling_Yes,0.007326937024277566
+categorical__Contract_Two year,0.007245795836869383
+categorical__StreamingTV_Yes,0.003939601106386933
+categorical__StreamingMovies_Yes,0.003609654349410694
+numeric__SeniorCitizen,0.0035072997405529633
+categorical__Contract_One year,0.003232789514635211
+categorical__Dependents_Yes,0.0014370980164836891
+categorical__TechSupport_Yes,0.0011594632159711083
+categorical__InternetService_DSL,0.0003106050344036715
+categorical__PaymentMethod_Credit card (automatic),0.0002659966677927818
+categorical__Dependents_No,0.0001715108934530329
+categorical__PhoneService_No,0.0
+categorical__PhoneService_Yes,0.0
+categorical__Partner_Yes,0.0
+categorical__gender_Male,0.0
+categorical__gender_Female,0.0
+categorical__Partner_No,0.0
+categorical__InternetService_No,0.0
+categorical__TechSupport_No internet service,0.0
+categorical__DeviceProtection_Yes,0.0
+categorical__DeviceProtection_No internet service,0.0
+categorical__DeviceProtection_No,0.0
+categorical__OnlineBackup_No internet service,0.0
+categorical__OnlineBackup_Yes,0.0
+categorical__OnlineSecurity_No internet service,0.0
+categorical__OnlineSecurity_Yes,0.0
+categorical__MultipleLines_Yes,0.0
+categorical__MultipleLines_No phone service,0.0
+categorical__StreamingTV_No,0.0
+categorical__StreamingTV_No internet service,0.0
+categorical__StreamingMovies_No,0.0
+categorical__StreamingMovies_No internet service,0.0
+categorical__PaymentMethod_Bank transfer (automatic),0.0
+categorical__PaymentMethod_Mailed check,0.0
