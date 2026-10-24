@@ -36,9 +36,6 @@ Customer churn prediction helps businesses identify customers who may stop using
 
 ## System Architecture
 
-
-## System Architecture
-
 ```mermaid
 flowchart TD
     A[User] --> B[Streamlit Dashboard]
