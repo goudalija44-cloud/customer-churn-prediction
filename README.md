@@ -36,11 +36,34 @@ Customer churn prediction helps businesses identify customers who may stop using
 
 ## System Architecture
 
-1. The user enters customer information in the Streamlit dashboard.
-2. The dashboard sends the prediction request to the FastAPI backend.
-3. The backend loads and uses the trained machine learning model.
-4. The API returns the prediction result.
-5. The dashboard displays the result to the user.
+
+## System Architecture
+
+```mermaid
+flowchart TD
+    A[User] --> B[Streamlit Dashboard]
+    B -->|Prediction Request| C[FastAPI Backend]
+    C --> D[Trained Gradient Boosting Model]
+    D --> C
+    C -->|Prediction Response| B
+    B --> E[Display Prediction Result]
+
+    F[GitHub Repository] -.-> G[Render API Deployment]
+    F -.-> H[Streamlit Cloud Deployment]
+```
+
+## Screenshots
+
+### Dashboard
+![Customer churn prediction dashboard](screenshots/dashboard.png)
+
+### Prediction Result
+![Customer churn prediction result](screenshots/prediction_result.png)
+
+### API Documentation
+![FastAPI interactive documentation](screenshots/model_evaluation.png)
+```
+
 
 ## Model Evaluation
 
