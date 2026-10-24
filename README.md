@@ -1,45 +1,52 @@
+
 # Customer Churn Prediction System
 
-An end-to-end Machine Learning project that predicts customer churn using customer demographics, service subscriptions, contract details, and billing information.
+An end-to-end machine learning application that predicts customer churn using a trained Gradient Boosting model. The project includes an interactive Streamlit dashboard and a FastAPI backend deployed as public web services.
+
+## Live Demo
+
+- **Dashboard:** https://customer-churn-prediction-sample.streamlit.app/
+- **Backend API:** https://customer-churn-prediction-api-oa7c.onrender.com
+- **API Documentation:** https://customer-churn-prediction-api-oa7c.onrender.com/docs
 
 ## Project Overview
 
-Customer churn occurs when customers stop using a company's services. This project trains and evaluates classification models to estimate churn risk and provides predictions through a FastAPI backend and an interactive Streamlit dashboard.
+Customer churn prediction helps businesses identify customers who may stop using their services. This project demonstrates a complete machine learning workflow, from model evaluation to API development and cloud deployment.
 
-## Features
+## Key Features
 
-- Data cleaning and exploratory data analysis
-- Training and comparison of four classification models
-- Hyperparameter tuning using RandomizedSearchCV
-- Cross-validation and decision-threshold selection
-- Evaluation using Precision, Recall, F1-score, ROC-AUC, and PR-AUC
-- Feature-importance analysis
+- Interactive customer churn prediction dashboard
 - REST API built with FastAPI
-- Interactive Streamlit dashboard
-- Automated API tests using pytest
+- Trained Gradient Boosting classification model
+- Model evaluation using multiple classification metrics
+- Health-check endpoint for API availability
+- Public cloud deployment of the dashboard and backend
 
-## Tech Stack
+## Technology Stack
 
 - **Language:** Python
-- **Machine Learning:** scikit-learn
 - **Data Processing:** Pandas, NumPy
-- **Visualization:** Matplotlib, Seaborn
+- **Machine Learning:** Scikit-learn
+- **Model Persistence:** Joblib
 - **Backend:** FastAPI, Uvicorn
 - **Dashboard:** Streamlit
-- **Testing:** Pytest, HTTPX
-- **Model Storage:** Joblib
+- **Testing:** Pytest
+- **Deployment:** Streamlit Community Cloud, Render
+- **Version Control:** Git, GitHub
 
-## Dataset
+## System Architecture
 
-IBM Telco Customer Churn dataset.
+1. The user enters customer information in the Streamlit dashboard.
+2. The dashboard sends the prediction request to the FastAPI backend.
+3. The backend loads and uses the trained machine learning model.
+4. The API returns the prediction result.
+5. The dashboard displays the result to the user.
 
-The dataset contains 7,043 customer records and includes customer information, service subscriptions, contract types, billing details, and the churn target.
+## Model Evaluation
 
-## Model Performance
+The model was evaluated using a held-out test set at a classification threshold of 0.34.
 
-The selected Gradient Boosting model was evaluated using a held-out test set. The classification threshold was set to 0.34 to improve churn detection.
-
-| Metric | Test Result |
+| Metric | Score |
 |---|---:|
 | Accuracy | 78.21% |
 | Precision | 56.99% |
@@ -48,7 +55,59 @@ The selected Gradient Boosting model was evaluated using a held-out test set. Th
 | ROC-AUC | 84.55% |
 | PR-AUC | 66.24% |
 
-These results reflect the current evaluation split. Performance may vary on new customer data.
+These results illustrate the trade-off between identifying potential churners and avoiding false-positive predictions. Performance may vary with new data.
+
+## Run Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/goudalija44-cloud/customer-churn-prediction.git
+cd customer-churn-prediction
+```
+
+### 2. Create and activate a virtual environment
+
+On Windows CMD:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+### 3. Install dependencies
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 4. Start the API
+
+```bash
+python -m uvicorn api.main:app --reload
+```
+
+Open the interactive API documentation at:
+
+http://127.0.0.1:8000/docs
+
+### 5. Start the dashboard
+
+Open a second terminal, activate the same virtual environment, and run:
+
+```bash
+python -m streamlit run dashboard/app.py
+```
+
+The dashboard will display a local URL in the terminal.
+
+## Testing
+
+Run the automated tests from the project root:
+
+```bash
+python -m pytest -v
+```
 
 ## Project Structure
 
@@ -59,16 +118,8 @@ customer-churn-prediction/
 ├── dashboard/
 │   └── app.py
 ├── data/
-│   ├── raw/
-│   └── processed/
 ├── models/
-├── notebooks/
 ├── src/
-│   ├── preprocessing/
-│   ├── training/
-│   ├── evaluation/
-│   ├── clean_data.py
-│   └── eda.py
 ├── tests/
 │   └── test_api.py
 ├── requirements.txt
@@ -76,54 +127,21 @@ customer-churn-prediction/
 └── README.md
 ```
 
-## Run Locally
+## Limitations
 
-### 1. Install dependencies
+- Predictions depend on the quality and representativeness of the training data.
+- Model performance can change when customer behavior or data distributions change.
+- Predictions are estimates, not guarantees that a customer will churn.
+- The project is a portfolio demonstration and should be validated on relevant business data before real-world use.
 
-```bash
-python -m pip install -r requirements.txt
-```
+## Future Improvements
 
-### 2. Start the FastAPI backend
+- Add model monitoring and data-drift detection.
+- Compare additional classification models.
+- Improve explainability with feature-importance analysis.
+- Add automated retraining and model versioning.
+- Expand the test suite and prediction monitoring.
 
-```bash
-python -m uvicorn api.main:app --reload
-```
+## Author
 
-API base URL: `http://127.0.0.1:8000`
-
-Interactive API documentation: `http://127.0.0.1:8000/docs`
-
-### 3. Start the Streamlit dashboard
-
-Open a second terminal and run:
-
-```bash
-python -m streamlit run dashboard/app.py
-```
-
-### 4. Run automated tests
-
-```bash
-python -m pytest tests/test_api.py -v
-```
-
-## API Endpoints
-
-| Method | Endpoint | Purpose |
-|---|---|---|
-| GET | `/` | API status |
-| GET | `/health` | Health check |
-| POST | `/predict` | Predict customer churn |
-
-## Deployment
-
-Public deployment links will be added after deployment is complete.
-
-- **Live dashboard:** To be added
-- **Live API:** To be added
-- **API documentation:** To be added
-
-## Disclaimer
-
-Predictions are estimates based on historical data and model behavior. They should support, not replace, informed business decisions. Feature importance indicates predictive relationships and does not establish causation.
+Computer Science student interested in Machine Learning, AI Engineering, and data-driven applications.
